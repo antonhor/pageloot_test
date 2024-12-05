@@ -1,0 +1,22 @@
+.transaction-summary {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.transaction-summary h3 {
+  color: #28a745;
+}
+
+@media (max-width: 768px) {
+  :host {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  table {
+    overflow-x: auto;
+  }
+}

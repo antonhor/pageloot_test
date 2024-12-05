@@ -1,0 +1,43 @@
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" [ngClass]="{'invalid-field': isFieldInvalid('name')}" />
+    <div *ngIf="isFieldInvalid('name')" class="error-message">Name is required.</div>
+  </div>
+
+  <div>
+    <label for="amount">Amount</label>
+    <input id="amount" formControlName="amount" type="number" [ngClass]="{'invalid-field': isFieldInvalid('amount')}" />
+    <div *ngIf="isFieldInvalid('amount')" class="error-message">Amount is required and must be a valid number.</div>
+  </div>
+
+  <div>
+    <label for="type">Transaction Type</label>
+    <select id="type" formControlName="type" [ngClass]="{'invalid-field': isFieldInvalid('type')}">
+      <option value="">Select</option>
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+    <div *ngIf="isFieldInvalid('type')" class="error-message">Transaction type is required.</div>
+  </div>
+
+  <div>
+    <label for="category">Category</label>
+    <select id="category" formControlName="category" [ngClass]="{'invalid-field': isFieldInvalid('category')}">
+      <option value="">Select</option>
+      <option value="groceries">Groceries</option>
+      <option value="salary">Salary</option>
+      <option value="entertainment">Entertainment</option>
+    </select>
+    <div *ngIf="isFieldInvalid('category')" class="error-message">Category is required.</div>
+  </div>
+
+  <div>
+    <label for="date">Date</label>
+    <input id="date" formControlName="date" type="date" [ngClass]="{'invalid-field': isFieldInvalid('date')}" />
+    <div *ngIf="isFieldInvalid('date')" class="error-message">Date is required.</div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
